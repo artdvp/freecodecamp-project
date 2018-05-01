@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>FreeCodeCamp Project - Personal Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="copyright" content="Artdvp" />
+  <meta charset="utf-8">
+  <meta name="description" content="freecodecamp tribute page" />
+  <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Anton|Oswald" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/css/mdb.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+</head>
+
+<body>
+  <!--Main Navigation-->
+  <header>
+
+    <!-- Navbar -->
+    <nav id="nav_bar" class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
+      <div class="container">
+
+        <!-- Brand -->
+        <a class="navbar-brand waves-effect" href="#">
+          <strong class="green-text">Artdvp</strong>
+        </a>
+
+        <!-- Collapse -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Links -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <!-- Left -->
+          <ul class="navbar-nav mr-auto smooth-scroll">
+            <li class="nav-item active">
+              <a class="nav-link" id="nav-about" href="#aboutme">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="nav-ibuild" href="#ibuild">I Build</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="nav-contact" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar -->
+  </header>
+  <!--Main Navigation-->
+
+  <!--card-->
+  <!--Start your project here-->
+  <div id="aboutme" class="container pad-top">
+    <div class="divider-new" style="margin-bottom: 12px;">
+      <h2 class="h2-responsive">About Me</h2>
+    </div>
+    <br><br>
+    <div class="row text-center">
+      <!--Grid column-->
+      <div class="col-lg-12 col-md-12">
+        <div class="col-md-12">
+          <div class="t-center">
+            <img src="https://farm1.staticflickr.com/973/41777587322_46e63fdb0e_k.jpg" class="rounded z-depth-1" style="width: 200px;"
+              alt="artdvp">
+          </div>
+          <br>
+          <h4>
+            <strong>Chaiwud Taitanee</strong>
+          </h4>
+        </div>
+        <div class="col-md-12">
+          <p class="grey-text">I'm Art. I am an Web Developer. I like JavaScript and Learning building Technology stuff.</p>
+          <!--Twitter-->
+          <a class="icons-sm tw-ic" href="https://twitter.com/@artdvp" target="_blank">
+            <i class="fa fa-twitter"> </i>
+          </a>
+          <!--github-->
+          <a class="icons-sm github-ic" href="https://github.com/artdvp" target="_blank">
+            <i class="fa fa-github"></i>
+          </a>
+          <!--freecodecamp-->
+          <a class="icons-sm free-code-camp-ic" href="https://www.freecodecamp.org/artdvp" target="_blank">
+            <i class="fa fa-free-code-camp"> </i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div id="ibuild" class="container pad-top">
+      <div class="divider-new" style="margin-bottom: 12px;">
+        <h2 class="h2-responsive">I Build</h2>
+      </div>
+      <br>
+      <!--Second row-->
+      <div id="appt">
+        <div class="card-columns">
+          <div v-for="result in results">
+            <div v-if="result.show === '1'" class="card text-center">
+              <div class="view overlay hm-white-slight">
+                <img :src="result.picture_url" class="img-fluid m-auto" :alt="result.title">
+                <a>
+                  <div class="mask waves-effect waves-light "></div>
+                </a>
+              </div>
+              <div class="card-block">
+                <h4 class="card-title ">{{result.title}}</h4>
+                <hr>
+                <p class="card-text ">
+                  <div>{{result.detail}}</div>
+                </p>
+                <div class="text-center ">
+                  <a :href="result.path_url" target="_blank " class="btn btn-primary waves-effect waves-light ">Demo</a>
+                  <!--<a href="{{x.path_src}}" target="_blank " class="btn btn-success waves-effect waves-light ">Source</a>-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <section class="section text-center" id="contact">
+      <div class="divider-new" style="margin-bottom: 12px;">
+        <h2 class="h2-responsive">Contact</h2>
+      </div>
+      <br>
+      <h5 class="pb-4 mb-4">Get In touch</h5>
+      <a type="button" class="btn btn-email waves-effect waves-light" href="#">
+        <i class="fa fa-envelope left"></i> Chaiwud.t@gmail.com</a>
+      <a type="button" class="btn btn-tw waves-effect waves-light" href="https://twitter.com/@artdvp" target="_blank"> 
+        <i class="fa fa-twitter left"></i> Twitter</a>
+      <a type="button" class="btn btn-git waves-effect waves-light" href="https://github.com/artdvp" target="_blank">
+        <i class="fa fa-github left"></i> Github</a>
+      <a type="button" class="btn btn-green waves-effect waves-light" href="https://www.freecodecamp.org/artdvp" target="_blank">
+        <i class="fa fa-free-code-camp left"></i> Freecodecamp</a>
+    </section>
+  </div>
+  <!-- footer -->
+  <footer class="page-footer pt-4 mt-4">
+    <div class="footer-copyright wow fadeIn py-3 text-center" data-wow-delay="0.2s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.2s;">
+      <div class="container-fluid">
+        <a href="https://artdvp.me" target="_blank"> Artdvp </a> © 2018 All Rights Reversed
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/js/mdb.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.2/tabletop.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+  <script src="./src/main.js"></script>
+  <script>
+    const vm = new Vue({
+      el: '#appt',
+      data: {
+        results: [],
+        timer: '',
+        activeItem: 'about'
+      },
+      methods: {
+        fetchDatafromsheet: function () {
+          var publicSpreadsheetUrl =
+            'https://docs.google.com/spreadsheets/d/1KcfDezVOTQwZlKo-ItNuOYvMm6xuy5ha3aCb7FC5mkY/pubhtml';
+          Tabletop.init({
+            key: publicSpreadsheetUrl,
+            callback: this.showInfo,
+            simpleSheet: true
+          })
+        },
+        showInfo: function (data, tabletop) {
+          this.results = data
+        }
+      },
+      created: function () {
+        this.fetchDatafromsheet()
+        this.timer = setInterval(this.fetchDatafromsheet, 5000)
+      },
+      beforeDestroy() {
+        clearInterval(this.timer)
+      }
+    });
+
+    // jQuery Check Scroll
+    $(document).ready(function () {
+      $(document).on("scroll", onScroll);
+
+      //smoothscroll
+      $('a[href^="#"]').on('click', function (e) {
+        e.preventDefault();
+        $(document).off("scroll");
+
+        $('a.nav-link').parent().each(function () {
+          $(this).removeClass('active');
+        })
+        $(this).parent().addClass('active');
+
+        var target = this.hash,
+          menu = target;
+        $target = $(target);
+        $('html, body').stop().animate({
+          'scrollTop': $target.offset().top + 2
+        }, 500, 'swing', function () {
+          window.location.hash = target;
+          $(document).on("scroll", onScroll);
+        });
+      });
+    });
+
+    function onScroll(event) {
+      var scrollPos = $(document).scrollTop();
+      $('#navbarSupportedContent a').each(function () {
+        var currLink = $(this);
+        var refElement = $(currLink.attr("href"));
+        if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+          $('#navbarSupportedContent ul li a').parent().removeClass("active");
+          currLink.parent().addClass("active");
+        } else {
+          currLink.parent().removeClass("active");
+        }
+      });
+    }
+  </script>
+</body>
+
+</html>
